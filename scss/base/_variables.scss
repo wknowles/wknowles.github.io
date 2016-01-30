@@ -1,5 +1,5 @@
 // Typography
-$base-font-family: $helvetica;
+$base-font-family: Neue Haas Unica Pro, Helvetica, sans-serif;
 $heading-font-family: $base-font-family;
 
 // Font Sizes
@@ -17,13 +17,15 @@ $base-z-index: 0;
 
 // Colors
 $blue: #1565c0;
+$altblue: #BF55EC;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
+$lighter-gray: #eee;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$action-color: $blue;
+$action-color: $altblue;
 
 // Border
 $base-border-color: $light-gray;
