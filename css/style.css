@@ -1,9 +1,3 @@
-html {
-  box-sizing: border-box; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   appearance: none;
   background-color: #BF55EC;
@@ -147,7 +141,7 @@ body {
   -moz-font-feature-settings: "liga";
   -ms-font-feature-settings: "liga";
   font-feature-settings: "liga";
-  margin: 0 auto;
+  margin: 2em;
   max-width: 44em; }
 
 h1,
@@ -182,5 +176,7 @@ picture {
   margin: 0;
   max-width: 100%; }
 
+/*
 header {
-  padding-top: 8em; }
+  padding-top: 2em;
+}*/
