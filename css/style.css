@@ -6,8 +6,8 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Lucida Grande", "Tahoma", "Verdana", "Arial", sans-serif;
-  font-size: 1em;
+  font-family: "Calluna-sans", sans-serif;
+  font-size: 1.6em;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
   line-height: 1;
@@ -45,8 +45,8 @@ label {
 input,
 select {
   display: block;
-  font-family: "Lucida Grande", "Tahoma", "Verdana", "Arial", sans-serif;
-  font-size: 1em; }
+  font-family: "Calluna-sans", sans-serif;
+  font-size: 1.6em; }
 
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
 select[multiple] {
@@ -55,8 +55,8 @@ select[multiple] {
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
-  font-family: "Lucida Grande", "Tahoma", "Verdana", "Arial", sans-serif;
-  font-size: 1em;
+  font-family: "Calluna-sans", sans-serif;
+  font-size: 1.6em;
   margin-bottom: 0.75em;
   padding: 0.5em;
   transition: border-color 150ms ease;
@@ -134,8 +134,8 @@ th {
 
 body {
   color: #333;
-  font-family: "Lucida Grande", "Tahoma", "Verdana", "Arial", sans-serif;
-  font-size: 1em;
+  font-family: "Calluna-sans", sans-serif;
+  font-size: 1.6em;
   line-height: 1.5;
   -webkit-font-feature-settings: "liga";
   -moz-font-feature-settings: "liga";
@@ -150,7 +150,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Lucida Grande", "Tahoma", "Verdana", "Arial", sans-serif;
+  font-family: "Calluna", serif;
   line-height: 1.2;
   margin: 0 0 0.75em; }
 
@@ -180,3 +180,5 @@ picture {
 header {
   padding-top: 2em;
 }*/
+h1, h2, h3, h4, h5, h6 {
+  font-feature-settings: 'dlig', 'liga', 'lnum', 'kern'; }

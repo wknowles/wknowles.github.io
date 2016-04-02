@@ -1,4 +1,6 @@
 .sass-cache/
 .DS_Store
 config.codekit
-wknowles.github.io.sketch
+
+#node
+node_modules
