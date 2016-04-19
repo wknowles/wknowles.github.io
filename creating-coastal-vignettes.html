@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Creating coastal vignettes for web maps.</title>
+  <meta name="description" content="Will Knowles' homepage">
+  <meta name="author" content="William Knowles">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+  <body>
+  <header>
+    <h4>Hi, I'm <a href="/">William Knowles.</a></h4>
+    <h1>Creating coastal vignettes for web maps.</h1>
+  </header>
+  <main>
+      <h4>Summary</h4>
+        <p>To start with I downloaded <a href="http://www.naturalearthdata.com/downloads/50m-physical-vectors/">Natural Earth 1:50m land</a> shapefile. This was then reprojected to Web Mercator / EPSG:3857. I ran a series of buffers on the reprojected shapefile within QGIS. These were then combined, exported to Mapbox and styled. The final map turned out like this:</p>
+
+    <p><img src="https://api.mapbox.com/styles/v1/wknowles/cim9gkxau0078adlz1xzpey4m/static/0.523851,59.113180,3.00,0.00,0.00/600x400@2x?access_token=pk.eyJ1Ijoid2tub3dsZXMiLCJhIjoiY2lnN3VlYXQ1MWt0Z3RlbWFqY3ltNjlzZiJ9.bl-TFJb8BkqTPRD8w8XJmA" width="600" height="400" alt="coastal vignetts" /></p>
+
+    <p>View the full web map on <a href="https://api.mapbox.com/styles/v1/wknowles/cim9gkxau0078adlz1xzpey4m.html?title=true&amp;access_token=pk.eyJ1Ijoid2tub3dsZXMiLCJhIjoiY2lnN3VlYXQ1MWt0Z3RlbWFqY3ltNjlzZiJ9.bl-TFJb8BkqTPRD8w8XJmA#3/50.578667702745435/-4.343862829276333/0">Mapbox</a>.</p>
+
+    <h2>Required Tools</h2>
+
+    <ol>
+    <li><a href="http://www.gdal.org/">GDAL</a> - I&rsquo;m on a mac, using homebrew and so ran <code>brew install gdal</code>.</li>
+    <li><a href="http://qgis.org/en/site/">QGIS</a></li>
+    <li>A <a href="https://www.mapbox.com/">MapBox</a> account - only required if you want to display the map on the web.</li>
+    </ol>
+
+    <h2>Prepare Natural Earth Data</h2>
+
+    <p>Natural Earth data comes projected as <a href="http://epsg.io/4326">WGS 84 / EPSG:4326</a>, but I want it in <a href="http://epsg.io/3857">Web Mercator / EPSG:3857</a>. To get to this I need to do two things, clip the data to cut off some of the area around the North and South Poles. This is because the Mercator projection theoretically extends nortwards and southwards to infinity. We need to cut off the poles to allow the map to render properly. The clipped file needs to then be reprojected.</p>
+
+    <p>To make things a little easier and to avoid the file system becomeing to clogged with files, I wrote a quick shell script to clip the shapefile, reproject, and then delete un-needed files. The script should be placed in the expanded zip folder containing the shapfiles downloaded from Natural Earth.</p>
+
+ <!--    <div><pre class="line-numbers"><code class="language-none">#!/bin/bash
+
+    base_file=&#39;ne_50m_land&#39; # change this to the filename of your shapefile
+
+    echo &quot;clipping shapefile ${base_file}.shp&quot;
+    ogr2ogr -f &quot;ESRI Shapefile&quot; ${base_file}_clipped.shp $base_file.shp -clipsrc -180 -85.06 180 85.06
+
+    echo &quot;setting ${base_file} to web mercator projection&quot;
+    ogr2ogr -t_srs EPSG:3857 ${base_file}_clipped_3857.shp ${base_file}_clipped.shp
+
+    echo &quot;cleaning up redundant files&quot;
+    rm ${base_file}.*
+    rm ${base_file}_clipped.*</code></pre></div> -->
+
+    <script src="https://gist.github.com/wknowles/a1a90583ab3e97a4052504bb00d768c8.js"></script>
+
+    <p>We now have a directory containing shapefiles of natural earth 1:50m land features, reprojected to web mercator.</p>
+
+    <h2>Creating buffers in QGIS</h2>
+
+    <p>Open the clipped and reprojected shapefile in QGIS. The buffers can be done manually but there is a wonderful plugin that has been created for creating multiple buffers, allowing the distance between them to be set. Go to the plugins menu and click Manage and Install Plugins. Search for and install the &ldquo;Multi-distance Buffer&rdquo; plugin.</p>
+
+    <p>The Multi-distance Buffer plugin is now avaliable in the Vector Menu. Click it and you will be presented with a number of options. In the buffer distance box enter the distance you want your first buffer to be. The measurement units of web mercator are in meter so for a 100km buffer, enter 100,000. Click Add and repeat for each buffer you want to create. Give a title for the output layer or just use the default &ldquo;buffer&rdquo;. Click OK to start. This will probably take awhile depending on the speed of your computer. Once complete click &ldquo;Close&rdquo;.</p>
+
+    <p>The buffer will now be shown above your original layer. You could now further style this within QGIS but I chose to export to Mapbox and style it there.</p>
+
+    <h4>Next Steps</h4>
+
+    <p>I would like to find a way to get the buffers to expand and contract as the map zoom increases and decreases. I have a feeling that is not possible with the above method. I imagine it would have to be done programmatically and on demand. I have been looking into D3 and wondering whether it could be possible using that. If you have any ideas or could point me in the right direction I would be eternally grateful and shower you with heart emoji <img class="emoji" title=":sparkling_heart:" alt=":sparkling_heart:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f496.png" height="20" width="20" align="absmiddle"> <img class="emoji" title=":heartpulse:" alt=":heartpulse:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f497.png" height="20" width="20" align="absmiddle"></p>
+
+    <h4>Contact</h4>
+    <p>If you have any questions or would like some help please get in touch. I have been really encouraged and learnt some great things from the truly brilliant mapping community (you people - yes you reading right now!) and I am keen to give something back.</p>
+   </main>
+   <footer>
+  <p><a rel="me" href="http://twitter.com/_williamknowles">twitter</a> / <a href="https://www.pinterest.com/knowleswill/">pinterest</a> / <a href="https://github.com/wknowles">github</a> / <a href="https://uk.linkedin.com/in/knowleswill">linkedin</a> / <a href="https://instagram.com/_williamknowles">instagram</a> / will at holly and will dot com</p>
+</footer>
+  </body>
+</html>

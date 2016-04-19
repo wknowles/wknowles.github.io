@@ -1,11 +1,21 @@
-@import "bourbon";
-@import "base/base";
-/*
-header {
-  padding-top: 2em;
-}*/
+// @import "bourbon";
+// @import "base/base";
 
-  // Headings. OpenType ligatures, discretionary ligatures and lining figures enabled if available.
-  h1, h2, h3, h4, h5, h6 {
-    font-feature-settings: 'dlig', 'liga', 'lnum', 'kern';
+@import "partials/variables";
+@import "partials/typography";
+@import "partials/links";
+
+header {
+  margin-bottom: 3rem;
+  h1 {
+    margin: 2rem 0;
   }
+}
+
+main{
+  @include smart-underline();
+}
+
+footer{
+  margin-top:6rem
+}
