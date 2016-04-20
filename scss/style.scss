@@ -16,6 +16,19 @@ main{
   @include smart-underline();
 }
 
+.writing {
+  li{
+    //font-size: 1.25rem;
+  }
+}
+
+.buttonTutorial{
+  background: $color-bg-highlight;
+  padding: 0 0.4rem;
+  // border: 1px solid teal;
+  font-size: 0.8rem;
+}
+
 footer{
   margin-top:6rem
 }
