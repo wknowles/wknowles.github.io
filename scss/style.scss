@@ -1,34 +1,67 @@
-// @import "bourbon";
-// @import "base/base";
+@import "bourbon";
+@import "base/base";
 
-@import "partials/variables";
-@import "partials/typography";
-@import "partials/links";
+// @import "partials/variables";
+// @import "partials/typography";
+// @import "partials/links";
 
-header {
-  margin-bottom: 3rem;
-  h1 {
-    margin: 2rem 0;
-  }
-}
+// header {
+//   margin-bottom: 3rem;
+//   h1 {
+//     margin: 2rem 0;
+//   }
+// }
 
-main{
-  @include smart-underline();
-}
+// main{
+//   @include smart-underline();
+// }
 
-.writing {
-  li{
-    //font-size: 1.25rem;
-  }
-}
+// .writing {
+//   li{
+//     //font-size: 1.25rem;
+//   }
+// }
 
-.buttonTutorial{
-  background: $color-bg-highlight;
-  padding: 0 0.4rem;
-  // border: 1px solid teal;
-  font-size: 0.8rem;
-}
+
+// .buttonTutorial{
+//   background: $color-bg-highlight;
+//   padding: 0 0.4rem;
+//   // border: 1px solid teal;
+//   font-size: 0.8rem;
+// }
 
 footer{
   margin-top:6rem
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
 }
