@@ -16,11 +16,12 @@
 //   @include smart-underline();
 // }
 
-// .writing {
-//   li{
-//     //font-size: 1.25rem;
-//   }
-// }
+.writing {
+  margin-top: 3rem;
+  ul li {
+    list-style-type: none;
+  }
+}
 
 
 // .buttonTutorial{
