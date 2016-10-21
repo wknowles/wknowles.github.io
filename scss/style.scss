@@ -1,20 +1,25 @@
 @import "bourbon";
 @import "base/base";
 
-// @import "partials/variables";
-// @import "partials/typography";
-// @import "partials/links";
+@import "partials/variables";
+@import "partials/typography";
+@import "partials/links";
 
-// header {
-//   margin-bottom: 3rem;
-//   h1 {
-//     margin: 2rem 0;
-//   }
-// }
+header {
+  margin-bottom: 3rem;
+}
 
 // main{
 //   @include smart-underline();
 // }
+
+// header {
+//     margin-bottom: 2em;
+// }
+
+ul.project_links {
+
+}
 
 .writing {
   margin-top: 3rem;
@@ -23,46 +28,15 @@
   }
 }
 
-
-// .buttonTutorial{
-//   background: $color-bg-highlight;
-//   padding: 0 0.4rem;
-//   // border: 1px solid teal;
-//   font-size: 0.8rem;
-// }
+.container {
+  // background: #ddd;
+  padding: 2.4em;
+  border: .1em solid $color-text-alt;
+  border-radius: 18px;
+  box-shadow: 10px 10px 10px lighten($color-text-alt, 25);
+}
 
 footer{
-  margin-top:6rem
-}
-
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
+  text-align: center;
+  margin-top:5rem
 }

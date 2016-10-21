@@ -1,3 +1,5 @@
+// thanks to http://type-scale.com/
+
 html {font-size: 1em;}
 
 body {
@@ -5,12 +7,12 @@ body {
   font-family: $base-font-family;
   font-weight: 400;
   color: #16161D;
-  max-width: 40em;
+  max-width: 44em;
   margin: 40px auto;
   -moz-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
-  padding: 4em 1em;
+  padding: 1em 1em;
 }
 
 p {margin-bottom: 1.3em;}
@@ -18,7 +20,7 @@ p {margin-bottom: 1.3em;}
 h1, h2, h3, h4 {
   margin: 1.414em 0 0.5em;
   font-weight: inherit;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #333;
   /*font-weight: 500;*/
 }
@@ -35,7 +37,3 @@ h3 {font-size: 1.138em;}
 h4 {font-size: 1.067em;}
 
 small, .font_small {font-size: 0.937em;}
-
-header {
-    margin-bottom: 4em;
-}
