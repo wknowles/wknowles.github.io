@@ -1,9 +1,14 @@
 @import "bourbon";
-@import "base/base";
+//@import "base/base";
+// @import "base/buttons";
 
 @import "partials/variables";
 @import "partials/typography";
+@import "partials/buttons";
 @import "partials/links";
+@import "partials/projects";
+
+
 
 header {
   margin-bottom: 3rem;
@@ -29,7 +34,7 @@ ul.project_links {
 }
 
 .container {
-  // background: #ddd;
+  background: $color-bg-base;
   padding: 2.4em;
   border: .1em solid $color-text-alt;
   border-radius: 18px;

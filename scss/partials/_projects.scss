@@ -1,0 +1,24 @@
+// * {margin: 0; padding: 0;}
+
+.projects{
+  padding: 0;
+  list-style-type: none;
+}
+
+.projects li{
+    display: inline-block;
+    margin-bottom: 20px;
+    overflow: auto;
+
+  &:hover {
+    //border-radius: 6px;
+    //background: lighten($color-text-alt, 40);
+
+  }
+
+  img {
+    //border-radius: 6px;
+    float: left;
+    // margin: 0 15px 0 0;
+  }
+}

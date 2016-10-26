@@ -1,0 +1,40 @@
+#{$all-buttons} {
+  appearance: none;
+  background-color: $color-bg-base;
+  border: .1em solid $color-text-alt;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px lighten($color-text-alt, 25);
+  //cursor: pointer;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  // font-weight: 600;
+  // line-height: 1;
+  padding: $small-spacing $base-spacing;
+  margin: $small-spacing;
+  text-decoration: none;
+  transition: background-color $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    //background-color: $color-bg-highlight;
+  }
+
+  &:active {
+    color: lighten($color-text-base, 100);
+    background-color: darken($color-bg-base, 60);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $color-bg-highlight;
+    }
+  }
+}
