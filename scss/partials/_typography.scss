@@ -7,7 +7,7 @@ body {
   font-family: $base-font-family;
   font-weight: 400;
   color: #16161D;
-  max-width: 44em;
+  max-width: 34em;
   margin: 40px auto;
   -moz-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -22,7 +22,7 @@ h1, h2, h3, h4 {
   font-weight: inherit;
   line-height: $heading-line-height;
   color: #333;
-  /*font-weight: 500;*/
+  font-weight: 500;
 }
 
 h1 {
